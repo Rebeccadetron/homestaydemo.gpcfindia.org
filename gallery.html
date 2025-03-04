@@ -45,33 +45,29 @@
         <!-- Header Start -->
         <div class="container-fluid bg-dark px-0">
             <div class="row gx-0">
+                
                 <div class="col-lg-3 bg-dark d-none d-lg-block">
-                    <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                        <h1 class="m-0 text-primary text-uppercase"style="font-size: 19px;">Oleander Suites Coorg</h1>
+                    <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center flex-column">
+                        <h1 class="m-0 text-primary text-uppercase" style="font-size: 19px;">Oleander Suites Coorg</h1>
+                        <small class="text-white" style="font-size: 14px;">Marketing Partner : Stays 42 <a href="http://stays42.com" class="text-primary"></a></small>
                     </a>
                 </div>
                 <div class="col-lg-9">
                     <div class="row gx-0 bg-white d-none d-lg-flex">
-                        <div class="col-lg-7 px-5 text-start">
-                            <div class="h-100 d-inline-flex align-items-center py-2 me-4">
-                                <i class="text-primary me-2"></i>
-                                
-                            </div>
-                            <div class="h-100 d-inline-flex align-items-center py-2">
+                        <div class="col-lg-7 px-5"></div> <!-- Empty column to maintain structure -->
+                        <div class="col-lg-5 px-5 text-end d-flex align-items-center justify-content-end">
+                            <div class="me-4" style="white-space: nowrap;">
                                 <i class="fa fa-phone-alt text-primary me-2"></i>
-                                <p class="mb-0">+91 9341116699 / + 91 6360893528</p>
+                                <span>+91 9341116699 / +91 6360893528</span>
                             </div>
-                        </div>
-                        <div class="col-lg-5 px-5 text-end">
-                            <div class="d-inline-flex align-items-center py-2">
-                                <a class="me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="me-3" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="me-3" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="me-3" href=""><i class="fab fa-instagram"></i></a>
+                                <div class="d-inline-flex align-items-center py-2">
+                                <a class="me-3" href="https://www.facebook.com/share/16HRMRCgGK/"><i class="fab fa-facebook-f"></i></a>
+                                <a class="me-3" href="https://www.instagram.com/stays_42?igsh=MWZ5N3RsdXRmYmc5aQ=="><i class="fab fa-instagram"></i></a>
                                 <a class="" href=""><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
+                   
                     <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
                         <a href="index.html" class="navbar-brand d-block d-lg-none">
                             <h1 class="m-0 text-primary text-uppercase">Oleander Suites Coorg</h1>
@@ -86,15 +82,16 @@
                                 <a href="service.html" class="nav-item nav-link">Facilities</a>
                                 <a href="room.html" class="nav-item nav-link">Rooms</a>
                                 <a href="booking.html" class="nav-item nav-link">Booking</a>
-                                <div class="nav-item dropdown">
+                            <!--    <div class="nav-item dropdown">
                                   <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Gallery</a>
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="gallery.html" class="dropdown-item active">Gallery</a>
+                                    <div class="dropdown-menu rounded-0 m-0">-->
+                                        <a href="gallery.html" class="nav-item nav-link active">Gallery</a>
+                                        <a href="contact.html" class="nav-item nav-link">Contact</a>
  <!--                                       <a href="team.html" class="dropdown-item">Our Team</a>
                                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>-->
                                     </div>
                                 </div>
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                
                             </div>
                         
                         </div>
@@ -122,87 +119,149 @@
         </div>
         <!-- Page Header End -->
 <!-- Image Gallery - Horizontal Layout -->
+<style>
+    .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .gallery-img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    .gallery-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .popup-img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
 <div class="container-xxl py-5">
     <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <div class="text-center">
             <h2>Gallery</h2>
         </div>
-        <div class="d-flex flex-wrap justify-content-center align-items-center gap-4">
-            <img class="img-fluid rounded" src="img/about1.JPG" alt="Image 1" style="width: 300px; height: auto;">
-            <img class="img-fluid rounded" src="img/about2.jpg" alt="Image 2" style="width: 300px; height: auto;">
-            <img class="img-fluid rounded" src="img/about3.JPG" alt="Image 3" style="width: 300px; height: auto;">
-            <img class="img-fluid rounded" src="img/about4.jpeg" alt="Image 4" style="width: 300px; height: auto;">
-            <img class="img-fluid rounded" src="img/about5.jpeg" alt="Image 5" style="width: 300px; height: auto;">
-            <img class="img-fluid rounded" src="img/about6.jpg" alt="Image 6" style="width: 300px; height: auto;">
-            <img class="img-fluid rounded" src="img/about7.JPG" alt="Image 7" style="width: 300px; height: auto;">
-            <img class="img-fluid rounded" src="img/about8.png" alt="Image 8" style="width: 300px; height: auto;">
+        <div class="gallery-container">
+            <img class="gallery-img" src="img/about1.JPG" alt="Image 1">
+            <img class="gallery-img" src="img/about2.jpg" alt="Image 2">
+            <img class="gallery-img" src="img/about3.JPG" alt="Image 3">
+            <img class="gallery-img" src="img/about4.jpeg" alt="Image 4">
+            <img class="gallery-img" src="img/about5.jpeg" alt="Image 5">
+            <img class="gallery-img" src="img/about6.jpg" alt="Image 6">
+            <img class="gallery-img" src="img/about7.JPG" alt="Image 7">
+            <img class="gallery-img" src="img/about8.png" alt="Image 8">
         </div>
     </div>
 </div>
 
- <!-- Newsletter Start -->
-     
-        <div class="col-lg-12 border rounded p-3">
-            <div class="border rounded text-center p-4">
-                <div class="bg-white rounded text-center p-6">
-                    
-                    
-               
-        </div>
+<!-- Popup Container -->
+<div class="popup-overlay" id="popup">
+    <img class="popup-img" id="popup-img">
+</div>
+
+<script>
+    document.querySelectorAll('.gallery-img').forEach(img => {
+        img.addEventListener('click', function () {
+            document.getElementById('popup-img').src = this.src;
+            document.getElementById('popup').style.display = 'flex';
+        });
+    });
+
+    document.getElementById('popup').addEventListener('click', function () {
+        this.style.display = 'none';
+    });
+</script>
+
+
+<!-- Newsletter Start -->
+<div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="row justify-content-center">
+
     </div>
 </div>
-        <!-- Newsletter Start -->
-        
 
-        <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
-            <div class="container pb-3">
-                <div class="row g-0 align-items-start" style="margin: 0; padding: 0;"> <!-- Removes extra space -->
+<!-- Newsletter Start -->
+<div style="margin-bottom: 50px;"></div>    
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer wow fadeIn py-3" data-wow-delay="0.1s">
+<div class="container pb-3">
+<div class="row g-3"> <!-- Removes extra space -->
+
+    <div class="col-md-6 col-lg-3">
+        <h6 class="section-title text-start text-primary text-uppercase mb-3">Contact</h6>
+        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Block No 22, Junior College Road, Madikeri Kodagu, Karnataka 571201</p>
+        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9341116699 / +91 6360893528</p>
+        <div class="d-flex pt-1">
+        <!--    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>-->
+            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/16HRMRCgGK/"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline light btn-social" href="https://www.instagram.com/stays_42?igsh=MWZ5N3RsdXRmYmc5aQ=="><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+        <!--    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>-->
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 ms-auto">
+        <h6 class="section-title text-start text-primary text-uppercase mb-3">Company</h6>
+        <a class="btn btn-link text-light" href="about.html">About Us</a>                                                                                                           
+        <a class="btn btn-link text-light" href="contact.html">Contact Us</a>
+        <a class="btn btn-link text-light" href="">Privacy Policy</a>
+        <a class="btn btn-link text-light" href="">Terms & Condition</a>
+        <a class="btn btn-link text-light" href="">Support</a>
+    </div>
+
+</div>
+
+<!-- Copyright Inside Blue Box -->
+ <div class="container">
+<div class="copyright py-2">
+    <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+            &copy; <a class="border-bottom text-light" href="#">Oleander Suites Coorg</a>, All Right Reserved. 
+            Designed By <a class="border-bottom" href="https://obbe.in">Obbe Innovators</a>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+            <div class="footer-menu">
+                <a href="" class="text-light">Home</a>
+                <a href="" class="text-light">Cookies</a>
+        <!--       <a href="" class="text-light">Help</a>
+                <a href="" class="text-light">FAQs</a>-->
         
-                    <div class="col-md-4 col-lg-4">
-                        <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Block No 22, Junior College Road, Near Hotel Highton, Kodagu, Kodagu, Coorg, Karnataka 571201</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9341116699 / +91 6360893528</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-        
-                    <div class="col-md-6 col-lg-3 ms-auto">
-                        <h6 class="section-title text-start text-primary text-uppercase mb-3">Company</h6>
-                        <a class="btn btn-link text-light" href="">About Us</a>                                                                                                           
-                        <a class="btn btn-link text-light" href="">Contact Us</a>
-                        <a class="btn btn-link text-light" href="">Privacy Policy</a>
-                        <a class="btn btn-link text-light" href="">Terms & Condition</a>
-                        <a class="btn btn-link text-light" href="">Support</a>
-                    </div>
-        
-                </div>
-        
-                <!-- Copyright Inside Blue Box -->
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom text-light" href="#">Oleander Suites Coorg</a>, All Right Reserved. 
-                            Designed By <a class="border-bottom text-light" href="https://htmlcodex.com">Obbe Innovators</a>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="" class="text-light">Home</a>
-                                <a href="" class="text-light">Cookies</a>
-                                <a href="" class="text-light">Help</a>
-                                <a href="" class="text-light">FAQs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-        <!-- Footer End -->
-
+    </div>
+</div>
+</div>
+</div>
+<!-- Footer End -->
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
